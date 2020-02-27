@@ -33,12 +33,15 @@ servidor.listen(8080);
 
 
 var express = require('express');
-
+var router = express.Router();
 var app = express();
 var port = 8080;
 
+app.set('views', './views');
+app.set('view engine', 'pug');
+
 app.get("/",function(req,res){
-    res.send("Hola mundo");
+    res.render('index', { title: 'Hey', message: 'Hello there!'});
 });
 
 var exam='{"título":"Examen1","autor":"jccuevas","preguntas":[{"título":"pregunta1","enunciado":"Responda correctamente","respuestas": [{"puntos": 0,"texto": "Respuesta 1"}, {"puntos": 0,"texto": "Respuesta 2"}, {"puntos": 1,"texto": "Respuesta 3"}]}]}';
