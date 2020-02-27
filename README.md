@@ -1,2 +1,2 @@
-# SSAATT1920_Practica2_servidor
-Aplicación servidora para la práctica 2 de Servicios y Aplicaciones Telemáticas en Node.js
+# SSAATT_Ejemplos_NodeJs
+Repositorio de ejemplo para emplear Node.js
