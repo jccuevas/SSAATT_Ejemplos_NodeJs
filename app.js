@@ -31,8 +31,6 @@ var port = 8080;
 
 
 /* Ejemplo con express con http*/
-
-
 var express = require('express');
 var router = express.Router();
 var app = express();
