@@ -1,23 +1,71 @@
 {
-    "name": "SSAATT_Ejemplos_NodeJs",
-    "version": "1.0.0",
-    "keywords": [
-        "util",
-        "functional",
-        "server",
-        "client",
-        "browser"
-    ],
-    "author": "everm",
-    "contributors": [],
-    "dependencies": {
-        "express": "4.17.1",
-        "mongodb": "^3.5.5",
-        "mustache": "^4.0.0",
-        "mustache-express": "^1.3.0",
-        "pug": "^2.0.4"
-    },
-    "scripts": {
-        "start": "node app.js"
-    }
+  "name": "ssaatt_ejemplos_nodejs",
+  "version": "1.0.0",
+  "keywords": [
+    "util",
+    "functional",
+    "server",
+    "client",
+    "browser"
+  ],
+  "author": "everm",
+  "contributors": [],
+  "scripts": {
+    "start": "node app.js"
+  },
+  "description": "Repositorio de ejemplo para emplear Node.js",
+  "main": "app.js",
+  "dependencies": {
+    "acorn": "^3.3.0",
+    "acorn-globals": "^3.1.0",
+    "asap": "^2.0.6",
+    "babylon": "^6.18.0",
+    "bytes": "^3.1.0",
+    "camelcase": "^1.2.1",
+    "content-type": "^1.0.4",
+    "core-js": "^2.6.11",
+    "character-parser": "^2.2.0",
+    "decamelize": "^1.2.0",
+    "depd": "^1.1.2",
+    "doctypes": "^1.1.0",
+    "destroy": "^1.0.4",
+    "ee-first": "^1.1.1",
+    "escape-html": "^1.0.3",
+    "debug": "^2.6.9",
+    "encodeurl": "^1.0.2",
+    "etag": "^1.8.1",
+    "fresh": "^0.5.2",
+    "forwarded": "^0.1.2",
+    "esutils": "^2.0.3",
+    "function-bind": "^1.1.1",
+    "is-buffer": "^1.1.6",
+    "has": "^1.0.3",
+    "js-stringify": "^1.0.2",
+    "ipaddr.js": "^1.9.1",
+    "is-regex": "^1.0.5",
+    "inherits": "^2.0.3",
+    "is-promise": "^2.1.0",
+    "lodash": "^4.17.15",
+    "kind-of": "^3.2.2",
+    "lazy-cache": "^1.0.4",
+    "longest": "^1.0.1",
+    "media-typer": "^0.3.0",
+    "mime": "^1.6.0",
+    "ms": "^2.0.0",
+    "mime-db": "^1.43.0",
+    "mongodb": "^3.5.5",
+    "negotiator": "^0.6.2",
+    "object-assign": "^4.1.1",
+    "mime-types": "^2.1.26"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jccuevas/SSAATT_Ejemplos_NodeJs.git"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jccuevas/SSAATT_Ejemplos_NodeJs/issues"
+  },
+  "homepage": "https://github.com/jccuevas/SSAATT_Ejemplos_NodeJs#readme"
 }
