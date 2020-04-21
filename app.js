@@ -61,11 +61,36 @@ app.get("/", function (req, res) {
 
 
 
-var exam = '{"título":"Examen1","autor":"jccuevas","preguntas":[{"título":"pregunta1","enunciado":"Responda correctamente","respuestas": [{"puntos": 0,"texto": "Respuesta 1"}, {"puntos": 0,"texto": "Respuesta 2"}, {"puntos": 1,"texto": "Respuesta 3"}]}]}';
-
-app.get("/test", function (request, response) {
-    response.send(exam);
+app.get("/test", function (req, res) {
+    fs.readFile('public/examen.json', 'utf8', function (err, data) {
+        res.writeHead(200, {
+            "Content-Type": "application/json"
+        });
+        res.end(data);
+    });
 });
+
+app.get('/test/:name', function (req, res, next) {
+    var options = {
+        root: path.join(__dirname, 'public'),
+        dotfiles: 'deny',
+        headers: {
+            'x-timestamp': Date.now(),
+            'x-sent': true
+        }
+    };
+
+    var fileName = "examen_" + req.params.name + ".json";
+    res.sendFile(fileName, options, function (err) {
+        if (err) {
+            next(err);
+            res.sendSstatus(404);
+        } else {
+            console.log('Sent:', fileName);
+        }
+    });
+}
+);
 
 //Ejemplos Mustache
 

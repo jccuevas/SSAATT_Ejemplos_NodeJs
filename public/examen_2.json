@@ -1,0 +1,65 @@
+{
+    "title": "Preguntas respuesta múltiple",
+    "author": "jccuevas",
+    "repository": [{
+            "title": "pregunta1",
+            "question": "Responda correctamente",
+            "answers": [{
+                    "points": 1,
+                    "text": "Respuesta 1"
+                }, {
+                    "points": 1,
+                    "text": "Respuesta 2"
+                }, {
+                    "points": 0,
+                    "text": "Respuesta 3"
+                }]
+        },
+        {
+            "title": "pregunta2",
+            "question": "Responda correctamente",
+            "answers": [{
+                    "points": 1,
+                    "text": "Respuesta 1"
+                }, {
+                    "points": 0,
+                    "text": "Respuesta 2"
+                }, {
+                    "points": 1,
+                    "text": "Respuesta 3"
+                }]
+        },
+        {
+            "title": "pregunta3",
+            "question": "Responda correctamente",
+            "answers": [{
+                    "points": 1,
+                    "text": "Respuesta 1"
+                }, {
+                    "points": 1,
+                    "text": "Respuesta 2"
+                }, {
+                    "points": 0,
+                    "text": "Respuesta 3"
+                }]
+        },
+        {
+            "title": "pregunta4",
+            "question": "Responda correctamente",
+            "answers": [{
+                    "points": 1,
+                    "text": "Respuesta 1"
+                }, {
+                    "points": 1,
+                    "text": "Respuesta 2"
+                }, {
+                    "points": 0,
+                    "text": "Respuesta 3"
+                },
+                {
+                    "points": 1,
+                    "text": "Respuesta 4"
+                }]
+        }
+    ]
+}
