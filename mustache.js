@@ -8,7 +8,7 @@
 
 
 var http = require("http");// Servidor HTTP
-var port = 8080;
+var port = 3000;
 /*Ejemplo solo con node.js*/
 /*
  
@@ -36,8 +36,6 @@ var router = express.Router();
 var app = express();
 var Mustache = require('mustache');
 var mustacheExpress = require('mustache-express');
-
-
 
 
 //app.set('view engine', 'pug');//Para usar pug como plantilla
@@ -102,13 +100,14 @@ var view = {
 };
 
 var user = {
-    user: "Joe",
+    user: "Joe Doe",
+    title:"Mr."
 
 };
 
 
 app.get("/mustache", function (req, res) {
-    res.render("mustache", view, function (err, html) {
+    res.render("mustache", user, function (err, html) {
         //En caso de error
         if(err){
         res.write("oops: "+err+" "+html);
