@@ -24,6 +24,7 @@
     "camelcase": "^1.2.1",
     "character-parser": "^2.2.0",
     "content-type": "^1.0.4",
+    "cookie-parser": "^1.4.5",
     "core-js": "^2.6.11",
     "debug": "^2.6.9",
     "decamelize": "^1.2.0",

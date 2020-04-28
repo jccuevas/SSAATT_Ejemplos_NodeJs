@@ -14,12 +14,39 @@ const port = 3000;
 
 const app = express();
 
-app.get("/",(req,res)=>{
+app.get("/", (req, res) => {
     res.send("¡Ejemplo de Express!");
-   
+
 });
 
-app.listen(port,hostname, function () {
-  console.log('Ejemplo de app escuchando en el puerto 3000');
+
+app.get("/saludo", (req, res) => {
+    res.writeHead(200, {
+        'Content-Type': 'text/html'});
+    res.end("<html><body>Hola</body></html>");
+});
+
+
+app.get("/despedida", (req, res) => {
+    res.status(200)
+       .type('text/html')
+       .send("<html><body>Adios</body></html>");
+});
+
+
+app.get("/propiedades", (req, res) => {
+    let html="<html><body>"
+            
+    res.status(200);
+    res.type("html");
+    res.write("<html><body>");
+    res.write("req.baseURL="+req.baseUrl+"<br>");
+    res.write("</body></html>");   
+    res.end();
+});
+
+
+app.listen(port, hostname, function () {
+    console.log('Ejemplo de app escuchando en el puerto 3000');
 });
 

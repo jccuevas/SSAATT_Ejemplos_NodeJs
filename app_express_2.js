@@ -14,10 +14,14 @@ const port = 3000;
 
 const app = express();
 
-app.get("/",(req,res)=>{
+app.use(express.static(__dirname + '/public'));
+
+app.get("/ejemplo",(req,res)=>{
     res.send("¡Ejemplo de Express!");
    
 });
+
+app.post("")
 
 app.listen(port,hostname, function () {
   console.log('Ejemplo de app escuchando en el puerto 3000');
