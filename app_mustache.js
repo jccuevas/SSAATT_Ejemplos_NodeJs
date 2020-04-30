@@ -59,36 +59,7 @@ app.get("/", function (req, res) {
 
 
 
-app.get("/test", function (req, res) {
-    fs.readFile('public/examen.json', 'utf8', function (err, data) {
-        res.writeHead(200, {
-            "Content-Type": "application/json"
-        });
-        res.end(data);
-    });
-});
 
-app.get('/test/:name', function (req, res, next) {
-    var options = {
-        root: path.join(__dirname, 'public'),
-        dotfiles: 'deny',
-        headers: {
-            'x-timestamp': Date.now(),
-            'x-sent': true
-        }
-    };
-
-    var fileName = "examen_" + req.params.name + ".json";
-    res.sendFile(fileName, options, function (err) {
-        if (err) {
-            next(err);
-            res.sendSstatus(404);
-        } else {
-            console.log('Sent:', fileName);
-        }
-    });
-}
-);
 
 //Ejemplos Mustache
 
@@ -101,19 +72,68 @@ var view = {
 
 var user = {
     user: "Joe Doe",
-    title:"Mr."
+    title: "Mr."
 
 };
 
+var users = {"users": [
+        {"name": "Joe Doe",
+            "title": "Mr."
+        }
+        , {
+            "name": "Mary Doe",
+            "title": "Ms."
+        }]};
+
+
+var funcion ={
+    "funcion": function(){
+        return function(text,render){
+            return "<em>"+render(text)+"</em>";
+        }
+    },
+    "users":[
+        {"name": "Joe Doe",
+            "title": "Mr."
+        }
+        , {
+            "name": "Mary Doe",
+            "title": "Ms."
+        }]
+}
 
 app.get("/mustache", function (req, res) {
     res.render("mustache", user, function (err, html) {
         //En caso de error
-        if(err){
-        res.write("oops: "+err+" "+html);
-    }else{
-        res.write(html);
-    }
+        if (err) {
+            res.write("oops: " + err + " " + html);
+        } else {
+            res.write(html);
+        }
+        res.end();
+    });
+});
+
+app.get("/users", function (req, res) {
+    res.render("users", users, function (err, html) {
+        //En caso de error
+        if (err) {
+            res.write("oops: " + err + " " + html);
+        } else {
+            res.write(html);
+        }
+        res.end();
+    });
+});
+
+app.get("/function", function (req, res) {
+    res.render("function", funcion, function (err, html) {
+        //En caso de error
+        if (err) {
+            res.write("oops: " + err + " " + html);
+        } else {
+            res.write(html);
+        }
         res.end();
     });
 });
