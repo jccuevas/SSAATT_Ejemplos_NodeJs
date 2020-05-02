@@ -18,16 +18,6 @@ app.use(express.static(__dirname + '/public'));
 
 
 
-
-
-
-
-
-
-
-
-
-
 app.route("/saludo")
         .get((req, res) => {
             res.writeHead(200, {

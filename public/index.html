@@ -11,12 +11,29 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <h1>Bienvenido a una página estática en el servidor Node.js</h1>
-        <p>Envía un formulario para que Node.js recoja los parámetros</p>
-        <form name="formulario" action="/saludo" method="post">
-            Parámetro1:<input name="parametro1" type="text"><br>
-            <input type="submit" value="Enviar">
-                   
-        </form>
+        <main>
+            <h1>Bienvenido a una página estática en el servidor Node.js</h1>
+            <section>
+                <h2>Formulario de ejemplo para recogida de parámetros</h2>
+                <p>Envía un formulario para que Node.js recoja los parámetros</p>
+                <form name="formulario" action="/saludo" method="post">
+                    Parámetro1:<input name="parametro1" type="text"><br>
+                    Parámetro2:<input name="parametro2" type="text"><br>
+                    <input type="submit" value="Enviar">
+
+                </form>
+            </section>
+            <section>
+                <h2>Formulario de ejemplo para crear elemntos en la base de datos con Mongoose</h2>
+                <p>Envía un formulario para que Node.js recoja los parámetros</p>
+                <form name="formulario" action="/user" method="post" >
+                    Nombre:<input name="nombre" type="text" value="nombre"><br>
+                    Apellido1:<input name="apellido1" type="text" value="apellido1"><br>
+                    Apellido2:<input name="apellido2" type="text" value="apellido2"><br>
+                    <input type="submit" value="Enviar">
+
+                </form>
+            </section>
+        </main>
     </body>
 </html>

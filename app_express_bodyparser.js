@@ -9,12 +9,20 @@
 
 const http = require('http'); //Se importa el módulo de soporte a HTTP
 const express = require('express');
+const bodyParser = require('body-parser')
 const hostname = '127.0.0.1';
 const port = 3000;
 
 const app = express();
 
 app.use(express.static(__dirname + '/public'));
+
+
+// create application/json parser
+var jsonParser = bodyParser.json()
+
+// create application/x-www-form-urlencoded parser
+var urlencodedParser = bodyParser.urlencoded({ extended: false })
 
 
 
@@ -24,16 +32,18 @@ app.route("/saludo")
                 'Content-Type': 'text/html'});
             res.end("<html><meta charset='utf8'><body>Hola método GET</body></html>");
         })
-        .post((req, res) => {
+        .post(urlencodedParser,(req, res) => {
             let data="";
-            req.on("data", (chunk) => {
-                data += chunk;
-            });
-            req.on("end", () => {
+            
                 res.writeHead(200, {
                     'Content-Type': 'text/html'});
-                res.end("<html><meta charset='utf8'><body>Hola método POST<p>"+data+"</body></html>");
-            });
+                res.write("<html><meta charset='utf8'><body>Hola método POST");
+                for(let param in req.body){
+                    res.write("<p>"+param+" "+req.body[param]+"</p>");
+                }
+        res.end("</body></html>");
+                
+           
         });
 
 

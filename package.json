@@ -11,7 +11,7 @@
   "author": "everm",
   "contributors": [],
   "scripts": {
-    "start": "node app.js"
+    "start": "node app_express.js"
   },
   "description": "Repositorio de ejemplo para emplear Node.js",
   "main": "app.js",
@@ -20,6 +20,7 @@
     "acorn-globals": "^3.1.0",
     "asap": "^2.0.6",
     "babylon": "^6.18.0",
+    "body-parser": "^1.19.0",
     "bytes": "^3.1.0",
     "camelcase": "^1.2.1",
     "character-parser": "^2.2.0",
@@ -55,6 +56,7 @@
     "mime-db": "^1.43.0",
     "mime-types": "^2.1.26",
     "mongodb": "^3.5.5",
+    "mongoose": "^5.9.11",
     "ms": "^2.0.0",
     "mustache": "^4.0.1",
     "mustache-express": "^1.3.0",
