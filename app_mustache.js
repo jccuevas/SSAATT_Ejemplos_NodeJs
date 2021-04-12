@@ -54,7 +54,7 @@ app.set('views', './views');
 app.use(express.static(__dirname + '/public'));
 
 app.get("/", function (req, res) {
-    res.render('index', {title: '¡Hola!', message: '¡Bienvenido!'});
+    res.render('index', { title: '¡Hola!', message: '¡Bienvenido!' });
 });
 
 
@@ -76,24 +76,28 @@ var user = {
 
 };
 
-var users = {"users": [
-        {"name": "Joe Doe",
+var users = {
+    "users": [
+        {
+            "name": "Joe Doe",
             "title": "Mr."
         }
         , {
             "name": "Mary Doe",
             "title": "Ms."
-        }]};
+        }]
+};
 
 
-var funcion ={
-    "funcion": function(){
-        return function(text,render){
-            return "<em>"+render(text)+"</em>";
+var funcion = {
+    "funcion": function () {
+        return function (text, render) {
+            return "<em>" + render(text) + "</em>";
         }
     },
-    "users":[
-        {"name": "Joe Doe",
+    "users": [
+        {
+            "name": "Joe Doe",
             "title": "Mr."
         }
         , {
