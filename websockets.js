@@ -18,17 +18,17 @@ app.get('/', (req, res) => {
 
 io.on('connection', (socket) => {
   console.log('a user connected');
-  for(let i=1;i<10;i++){
-       io.emit('chat message', "SERVER:"+i); 
-    }
+  for (let i = 1; i < 10; i++) {
+    io.emit('chat message', "SERVER:" + i);
+  }
   socket.on('disconnect', () => {
     console.log('user disconnected');
-    
+
   });
-  
+
   socket.on('chat message', (msg) => {
     console.log('message: ' + msg);
-    io.emit('chat message', "SERVER:"+msg);
+    io.emit('chat message', "eco:" + msg);
   });
 });
 
