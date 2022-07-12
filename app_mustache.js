@@ -72,11 +72,13 @@ var view = {
 
 var user = {
     user: "Joe Doe",
-    title: "Mr."
+    title: "Mr.",
+    date: "12/07/2022"
 
 };
 
 var users = {
+    "date":"14/07/2022",
     "users": [
         {
             "name": "Joe Doe",
@@ -98,16 +100,30 @@ var funcion = {
     "users": [
         {
             "name": "Joe Doe",
-            "title": "Mr."
+            "title": "Mr.",
+            "date": "12/07/2022"
         }
         , {
             "name": "Mary Doe",
-            "title": "Ms."
+            "title": "Ms.",
+            "date": "12/05/2022"
         }]
 }
 
 app.get("/mustache", function (req, res) {
     res.render("mustache", user, function (err, html) {
+        //En caso de error
+        if (err) {
+            res.write("oops: " + err + " " + html);
+        } else {
+            res.write(html);
+        }
+        res.end();
+    });
+});
+
+app.get("/ejemplo1", function (req, res) {
+    res.render("ejemplo1", user, function (err, html) {
         //En caso de error
         if (err) {
             res.write("oops: " + err + " " + html);

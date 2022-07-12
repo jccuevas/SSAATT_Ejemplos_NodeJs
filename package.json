@@ -11,7 +11,8 @@
   "author": "everm",
   "contributors": [],
   "scripts": {
-    "start": "node app_express.js"
+    "start": "node app_express.js",
+    "dev": "nodemon app_mustache.js"
   },
   "description": "Repositorio de ejemplo para emplear Node.js",
   "main": "app.js",
@@ -65,7 +66,9 @@
     "object-assign": "^4.1.1",
     "socket.io": "^2.4.1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jccuevas/SSAATT_Ejemplos_NodeJs.git"
