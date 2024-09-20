@@ -8,20 +8,32 @@
  */
 
 const express = require("express");
+const cookieParser = require("cookie-parser"); //Permite extraer las cookies con req.cookies
 const hostname = "127.0.0.1";
 const port = 3000;
 
 const app = express();
+app.use(cookieParser()); //Para usar el middleware Cookie Parser
 
 app.get("/", (req, res) => {
-  res.send("¡Ejemplo de Express!");
+  res.writeHead(200, {
+    "Content-Type": "text/html;charset=utf-8",
+    "Set-Cookie": "sid=123456; Max-Age=30",
+  });
+  res.end("¡He creado una cookie!");
 });
 
 app.get("/saludo", (req, res) => {
   res.writeHead(200, {
     "Content-Type": "text/html",
   });
-  res.end("<html><body>Hola</body></html>");
+  let cookies = req.cookies;
+  console.log("Cookies: ", req.cookies);
+  res.end(
+    "<html><body>Hola" +
+      (cookies ? JSON.stringify(cookies) : "No hay cookies") +
+      "</body></html>"
+  );
 });
 
 app.get("/despedida", (req, res) => {
